@@ -2,6 +2,8 @@ import { FC } from 'react';
 
 import Image from 'next/image';
 
+import facebookIcon from '../public/images/facebook.svg';
+import instagramIcon from '../public/images/instagram.svg';
 import logo from '../public/images/logo-carre-fond-gris.svg';
 
 export const Footer: FC = () => {
@@ -10,7 +12,7 @@ export const Footer: FC = () => {
       <div className="flex flex-row flex-wrap items-center lg:justify-evenly gap-10 mb-6">
         <div className="flex max-lg:w-full max-lg:justify-center">
           <a className="w-60" href="#" spellCheck="false">
-            <Image className="" src={logo} alt="" contentEditable="false" />
+            <Image className="" src={logo} alt="" />
           </a>
         </div>
         <div
@@ -47,11 +49,11 @@ export const Footer: FC = () => {
       <div className="w-full flex justify-between">
         <p className="text-sm text-gray-400">© 2022. All rights reserved.</p>
         <div className="flex space-x-2 lg:space-x-4">
-          <a href={'https://www.facebook.com/goutdouest'} spellCheck="false">
-            <img src="images/facebook.svg" alt="" className="" />
+          <a href={'https://www.facebook.com/goutdouest'}>
+            <Image src={facebookIcon} alt="Icône Facebook" />
           </a>
-          <a href={'https://www.instagram.com/valerieapeche/'} spellCheck="false">
-            <img src="images/instagram.svg" alt="" />
+          <a href={'https://www.instagram.com/valerieapeche/'}>
+            <Image src={instagramIcon} alt="Icône Instagram" />
           </a>
         </div>
       </div>

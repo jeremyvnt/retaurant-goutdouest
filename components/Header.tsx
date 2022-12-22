@@ -2,9 +2,35 @@ import { FC, useCallback, useState } from 'react';
 
 import Image from 'next/image';
 
-import bigLogoGray from '../public/images/logo-carre-fond-blanc.svg';
+import facebookIcon from '../public/images/facebook.svg';
+import instagramIcon from '../public/images/instagram.svg';
 import bigLogo from '../public/images/logo-carre-fond-gris.svg';
 import logo from '../public/images/logo-horizontal-fond-gris.svg';
+
+interface NavLinkProps {
+  label: string;
+  path: string;
+  onClick?: () => void;
+}
+
+const MobileNavLink: FC<NavLinkProps> = ({ label = false, onClick, path }) => (
+  <li className="mb-1">
+    <a
+      className="block p-4 text-sm font-semibold text-white hover:text-gray-300 active:text-red-400 rounded"
+      href={path}
+      onClick={onClick}
+    >
+      {label}
+    </a>
+  </li>
+);
+const NavLink: FC<NavLinkProps> = ({ label = false, path }) => (
+  <li>
+    <a className="text-sm font-bold text-white hover:text-red-500 active:text-red-400" href={path}>
+      {label}
+    </a>
+  </li>
+);
 
 interface MobileNavigationProps {
   isVisible: boolean;
@@ -17,23 +43,23 @@ const MobileNavigation: FC<MobileNavigationProps> = ({ isVisible = false, onClos
       ${isVisible ? 'translate-x-0' : 'translate-x-full'}`}
   >
     <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
-    <nav className="relative flex flex-col py-6 pl-6 pr-5 h-full w-full bg-white border-r overflow-y-auto">
+    <nav className="relative flex flex-col py-6 pl-6 pr-5 h-full w-full bg-gray-500 border-r overflow-y-auto">
       <div className="flex items-center mb-8">
         <div className="flex justify-center w-full font-bold leading-none">
-          <Image className="h-auto" src={bigLogoGray} width={250} alt="" />
+          <Image className="h-auto" src={bigLogo} width={250} alt="" />
         </div>
         <button className="self-start navbar-close pt-3" onClick={onClose}>
           <svg
-            className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+            className="h-6 w-6 text-white cursor-pointer hover:text-gray-200"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M6 18L18 6M6 6l12 12"
             ></path>
           </svg>
@@ -41,55 +67,27 @@ const MobileNavigation: FC<MobileNavigationProps> = ({ isVisible = false, onClos
       </div>
       <div>
         <ul>
-          <li className="mb-1">
-            <a
-              className="block p-4 text-sm font-semibold text-gray-500 hover:text-red-500 active:text-red-400 rounded"
-              href="#a-propos"
-              onClick={onClose}
-            >
-              À propos
-            </a>
-          </li>
-          <li className="mb-1">
-            <a
-              className="block p-4 text-sm font-semibold text-gray-500 hover:text-red-500 active:text-red-400 rounded"
-              href="#formules"
-              onClick={onClose}
-            >
-              Nos formules
-            </a>
-          </li>
-          <li className="mb-1">
-            <a
-              className="block p-4 text-sm font-semibold text-gray-500 hover:text-red-500 active:text-red-400 rounded"
-              href="#carte"
-              onClick={onClose}
-            >
-              Notre carte
-            </a>
-          </li>
-          <li className="mb-1">
-            <a
-              className="block p-4 text-sm font-semibold text-gray-500 hover:text-red-500 active:text-red-400 rounded"
-              href="#epicerie"
-              onClick={onClose}
-            >
-              Épicerie
-            </a>
-          </li>
+          <MobileNavLink label={'À propos'} path={'#a-propos'} onClick={onClose} />
+          <MobileNavLink label={'Nos formules'} path={'#formules'} onClick={onClose} />
+          <MobileNavLink label={'Notre carte'} path={'#carte'} onClick={onClose} />
+          <MobileNavLink label={'Épicerie'} path={'#epicerie'} onClick={onClose} />
         </ul>
       </div>
       <div className="mt-auto">
-        <p className="my-4 text-xs text-center text-gray-400">
+        <p className="my-4 text-xs text-center text-white">
           <span>© 2022 All rights reserved.</span>
         </p>
-        <div className="text-center">
-          <a className="inline-block px-1" href="#">
-            <img src="atis-assets/social/facebook.svg" alt="" />
-          </a>
-          <a className="inline-block px-1" href="#">
-            <img src="atis-assets/social/instagram.svg" alt="" />
-          </a>
+        <div className="flex flex-row gap-2 justify-center">
+          <div>
+            <a href={'https://www.facebook.com/goutdouest'}>
+              <Image src={facebookIcon} alt="Icône Facebook" />
+            </a>
+          </div>
+          <div>
+            <a href={'https://www.instagram.com/valerieapeche/'}>
+              <Image src={instagramIcon} alt="Icône Instagram" />
+            </a>
+          </div>
         </div>
       </div>
     </nav>
@@ -108,12 +106,12 @@ export const Header: FC = () => {
       className="relative bg-cover bg-no-repeat "
       style={{
         backgroundImage:
-          "url('images/table.jpg?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=1926&amp;q=80');",
+          "url('images/table.jpg?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=1926&amp;q=80')",
       }}
     >
       <div className="absolute inset-0 bg-gray-900 opacity-30"></div>
-      <nav className="relative px-6 py-6 flex justify-between items-center" contentEditable="false">
-        <a className="self-start" href="#" spellCheck="false">
+      <nav className="relative px-6 py-6 flex justify-between items-center">
+        <a className="self-start" href="#">
           <Image className="h-12" src={logo} alt="" width={250} />
         </a>
         <div className="lg:hidden">
@@ -133,55 +131,19 @@ export const Header: FC = () => {
           </button>
         </div>
         <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
-          <li>
-            <a
-              className="text-sm font-bold text-white hover:text-red-500 active:text-red-400"
-              href="#a-propos"
-              spellCheck="false"
-            >
-              A propos
-            </a>
-          </li>
-          <li>
-            <a
-              className="text-sm font-bold text-white hover:text-red-500 active:text-red-400"
-              href="#formules"
-              spellCheck="false"
-            >
-              Nos formules
-            </a>
-          </li>
-          <li>
-            <a
-              className="text-sm font-bold text-white hover:text-red-500 active:text-red-400"
-              href="#carte"
-              spellCheck="false"
-            >
-              Notre carte
-            </a>
-          </li>
-          <li>
-            <a
-              className="text-sm font-bold text-white hover:text-red-500 active:text-red-400"
-              href="#epicerie"
-            >
-              Epicerie
-            </a>
-          </li>
+          <NavLink label={'À propos'} path={'#a-propos'} />
+          <NavLink label={'Nos formules'} path={'#formules'} />
+          <NavLink label={'Notre carte'} path={'#carte'} />
+          <NavLink label={'Épicerie'} path={'#epicerie'} />
         </ul>
       </nav>
-      <div className="relative pt-20 pb-20 text-gray-500" contentEditable="false">
+      <div className="relative pt-20 pb-20 text-gray-500">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap -mx-4">
             <div className="w-full lg:w-1/2 px-4 mb-12 md:mb-20 lg:mb-0 flex items-center">
               <div className="w-full text-center lg:text-left">
                 <div className="max-w-md mx-auto lg:mx-0 max-lg:justify-center max-lg:m-auto flex">
-                  <Image
-                    className="max-lg:m-auto max-w-full max-h-full"
-                    src={bigLogo}
-                    alt=""
-                    contentEditable="false"
-                  />
+                  <Image className="max-lg:m-auto max-w-full max-h-full" src={bigLogo} alt="" />
                 </div>
                 <div className="max-w-sm mx-auto lg:mx-0">
                   <p
@@ -189,7 +151,6 @@ export const Header: FC = () => {
                     spellCheck="false"
                     data-mci-spellchecked="true"
                     style={{ wordBreak: 'break-word', position: 'relative', zIndex: 0 }}
-                    contentEditable="false"
                   >
                     De la Normandie aux Pyrénées, Goût d’Ouest vous propose modestement de petits
                     plaisirs au bout de la fourchette.

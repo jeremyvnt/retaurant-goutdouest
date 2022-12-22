@@ -1,7 +1,5 @@
 import { FC } from 'react';
 
-import Image from 'next/image';
-
 export const Formulas: FC = () => {
   return (
     <section id="formules">
@@ -17,58 +15,35 @@ export const Formulas: FC = () => {
       >
         <div className="absolute inset-0 bg-gray-900 radius-for-skewed opacity-50"></div>
         <div className="container mx-auto px-4 relative">
-          <div className="max-w-md text-center mx-auto">
+          <div className="text-center mx-auto">
             <h2
               className="text-4xl lg:text-5xl text-white font-bold font-heading"
-              contentEditable="false"
-              spellCheck="false"
-              data-mci-spellchecked="true"
               style={{ wordBreak: 'break-word', position: 'relative', zIndex: 0 }}
             >
               Nos formules
             </h2>
-            <div className="mb-6 max-w-sm mx-auto">
+            <div className="mb-6 mx-auto">
               <p
                 className="leading-loose h-16 text-white"
-                contentEditable="false"
-                spellCheck="false"
-                data-mci-spellchecked="true"
                 style={{ wordBreak: 'break-word', position: 'relative', zIndex: 0 }}
               >
-                Description
+                Pour nos formules, on vous emmène à l’essentiel, au fil des saisons et au plus près
+                des producteurs. Notre mot d’ordre : le produit... Votre corps vous dira merci et
+                vos papilles aussi !
+              </p>
+              <p
+                className="leading-loose text-white"
+                style={{ wordBreak: 'break-word', position: 'relative', zIndex: 0 }}
+              >
+                Et pour varier les plaisirs, nos formules sont renouvelées toutes les semaines.
               </p>
             </div>
-            <div className="flex flex-wrap -mx-4 -mb-4 md:mb-0">
-              <div className="w-full md:w-1/2 px-4 mb-4 md:mb-0">
-                <p
-                  className="leading-loose h-16 text-white"
-                  contentEditable="false"
-                  spellCheck="false"
-                  data-mci-spellchecked="true"
-                  style={{ wordBreak: 'break-word', position: 'relative', zIndex: 0 }}
-                >
-                  Formules de la semaine
-                </p>
-                <a
-                  className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 text-white font-semibold leading-loose transition duration-200 bg-red-400 hover:bg-red-500"
-                  href="#"
-                  spellCheck="false"
-                >
-                  Nos formules
-                </a>
-              </div>
-              <div className="w-full md:w-1/2 px-4 mb-4 md:mb-0">
-                <p
-                  className="leading-loose h-16 text-white"
-                  contentEditable="false"
-                  spellCheck="false"
-                  data-mci-spellchecked="true"
-                  style={{ wordBreak: 'break-word', position: 'relative', zIndex: 0 }}
-                >
-                  Formule enfant
-                </p>
-              </div>
-            </div>
+            <a
+              className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 text-white font-semibold leading-loose transition duration-200 bg-red-400 hover:bg-red-500"
+              href="https://www.facebook.com/goutdouest"
+            >
+              Découvrir les formules du moment
+            </a>
           </div>
         </div>
       </div>

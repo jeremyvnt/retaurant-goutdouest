@@ -17,9 +17,9 @@ export const GroceryStore: FC = () => {
       >
         <div className="absolute inset-0 bg-gray-900 radius-for-skewed opacity-50"></div>
         <div className="container mx-auto px-4 relative">
-          <div className="max-w-md text-center mx-auto">
+          <div className="text-center mx-auto">
             <h2 className="text-4xl lg:text-5xl text-white font-bold font-heading">Nos produits</h2>
-            <div className="mb-6 max-w-sm mx-auto">
+            <div className="mb-6 mx-auto">
               <p className="leading-loose h-16 text-white">
                 Découvrez dans notre épicerie gourmande, une sélection de produits d’artisans
                 attachés à leur terroir.
