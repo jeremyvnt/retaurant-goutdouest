@@ -24,7 +24,7 @@ export const Formulas: FC = () => {
             </h2>
             <div className="mb-6 mx-auto">
               <p
-                className="leading-loose h-16 text-white"
+                className="leading-loose h-auto text-white"
                 style={{ wordBreak: 'break-word', position: 'relative', zIndex: 0 }}
               >
                 Pour nos formules, on vous emmène à l’essentiel, au fil des saisons et au plus près

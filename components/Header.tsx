@@ -16,7 +16,7 @@ interface NavLinkProps {
 const MobileNavLink: FC<NavLinkProps> = ({ label = false, onClick, path }) => (
   <li className="mb-1">
     <a
-      className="block p-4 text-sm font-semibold text-white hover:text-gray-300 active:text-red-400 rounded"
+      className="block p-4 text-sm font-semibold text-white hover:text-gray-300"
       href={path}
       onClick={onClick}
     >
@@ -26,7 +26,7 @@ const MobileNavLink: FC<NavLinkProps> = ({ label = false, onClick, path }) => (
 );
 const NavLink: FC<NavLinkProps> = ({ label = false, path }) => (
   <li>
-    <a className="text-sm font-bold text-white hover:text-red-500 active:text-red-400" href={path}>
+    <a className="text-sm font-bold text-white hover:text-red-500" href={path}>
       {label}
     </a>
   </li>
@@ -112,7 +112,11 @@ export const Header: FC = () => {
       <div className="absolute inset-0 bg-gray-900 opacity-30"></div>
       <nav className="relative px-6 py-6 flex justify-between items-center">
         <a className="self-start" href="#">
-          <Image className="h-12" src={logo} alt="" width={250} />
+          <Image
+            className="h-12 max-sm:w-32 w-48"
+            src={logo}
+            alt="Logo horizontal restaurant Goût d'ouest"
+          />
         </a>
         <div className="lg:hidden">
           <button
