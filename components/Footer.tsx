@@ -40,7 +40,7 @@ export const Footer: FC = () => {
             >
               HORAIRES
             </h5>
-            <p className="text-gray-300">Du Mardi au Samedi de 12h00 à 14h30</p>
+            <p className="text-gray-300">Du Mardi au Samedi de 12h00 à 14h00</p>
             <p className="text-gray-300">Les vendredis et samedis de 19h à 20h30</p>
             <p className="text-gray-300">Ouvert le midi les lundis de foire</p>
           </div>

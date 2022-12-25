@@ -27,15 +27,19 @@ export const Formulas: FC = () => {
                 className="leading-loose h-auto text-white"
                 style={{ wordBreak: 'break-word', position: 'relative', zIndex: 0 }}
               >
-                Pour nos formules, on vous emmène à l’essentiel, au fil des saisons et au plus près
-                des producteurs. Notre mot d’ordre : le produit... Votre corps vous dira merci et
-                vos papilles aussi !
+                Pour nos formules, on vous emmène à l’essentiel, au fil des saisons
               </p>
               <p
                 className="leading-loose text-white"
                 style={{ wordBreak: 'break-word', position: 'relative', zIndex: 0 }}
               >
-                Et pour varier les plaisirs, nos formules sont renouvelées toutes les semaines.
+                Votre corps vous dira merci et vos papilles aussi !
+              </p>
+              <p
+                className="leading-loose text-white"
+                style={{ wordBreak: 'break-word', position: 'relative', zIndex: 0 }}
+              >
+                Et pour varier les plaisirs, nos formules sont renouvelées 2 fois par semaine.
               </p>
             </div>
             <a
