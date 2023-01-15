@@ -27,7 +27,7 @@ export const Formulas: FC = () => {
                 className="leading-loose h-auto text-white"
                 style={{ wordBreak: 'break-word', position: 'relative', zIndex: 0 }}
               >
-                Pour nos formules, on vous emmène à l’essentiel, au fil des saisons
+                Pour nos formules, on vous emmène à l’essentiel, au fil des saisons.
               </p>
               <p
                 className="leading-loose text-white"

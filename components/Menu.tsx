@@ -36,6 +36,7 @@ const Tab: FC<TabProps> = memo(({ value, label, onClick, selectedTab }) => {
     <button
       className={`px-4 py-4 w-full md:w-1/2 lg:w-auto font-bold border-b-2 hover:text-red-600 transition duration-150 ${relatedStyle}`}
       onClick={handleOnClick}
+      name={label}
     >
       {label}
     </button>

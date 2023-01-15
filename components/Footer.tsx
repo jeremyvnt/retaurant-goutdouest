@@ -11,8 +11,8 @@ export const Footer: FC = () => {
     <section className="p-20 bg-gray-500">
       <div className="flex flex-row flex-wrap items-center lg:justify-evenly gap-10 mb-6">
         <div className="flex max-lg:w-full max-lg:justify-center">
-          <a className="w-60" href="#" spellCheck="false">
-            <Image className="" src={logo} alt="" />
+          <a className="w-60" href="#" aria-label="Logo restaurant Goût d'ouest">
+            <Image className="" src={logo} alt="Logo restaurant Goût d'ouest" />
           </a>
         </div>
         <div
@@ -29,7 +29,11 @@ export const Footer: FC = () => {
             </h5>
             <p className="text-gray-300">92 rue Carnot, 17600 Saujon</p>
             <p className="text-gray-300">05 46 22 98 46</p>
-            <a className="text-gray-300" href={'mailto:valerie@restaurant-goutdouest.fr'}>
+            <a
+              className="text-gray-300"
+              href={'mailto:valerie@restaurant-goutdouest.fr'}
+              aria-label="Email du restaurant Goût d'ouest"
+            >
               valerie@restaurant-goutdouest.fr
             </a>
           </div>
@@ -49,10 +53,16 @@ export const Footer: FC = () => {
       <div className="w-full flex justify-between">
         <p className="text-sm text-gray-400">© 2022. All rights reserved.</p>
         <div className="flex space-x-2 lg:space-x-4">
-          <a href={'https://www.facebook.com/goutdouest'}>
+          <a
+            href={'https://www.facebook.com/goutdouest'}
+            aria-label="Facebook du restaurant Goût d'ouest"
+          >
             <Image src={facebookIcon} alt="Icône Facebook" />
           </a>
-          <a href={'https://www.instagram.com/valerieapeche/'}>
+          <a
+            href={'https://www.instagram.com/valerieapeche/'}
+            aria-label="Instagram restaurant Goût d'ouest"
+          >
             <Image src={instagramIcon} alt="Icône Instagram" />
           </a>
         </div>

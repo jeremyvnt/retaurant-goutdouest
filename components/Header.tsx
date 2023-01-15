@@ -13,20 +13,21 @@ interface NavLinkProps {
   onClick?: () => void;
 }
 
-const MobileNavLink: FC<NavLinkProps> = ({ label = false, onClick, path }) => (
+const MobileNavLink: FC<NavLinkProps> = ({ label, onClick, path }) => (
   <li className="mb-1">
     <a
       className="block p-4 text-sm font-semibold text-white hover:text-gray-300"
       href={path}
       onClick={onClick}
+      aria-label={label}
     >
       {label}
     </a>
   </li>
 );
-const NavLink: FC<NavLinkProps> = ({ label = false, path }) => (
+const NavLink: FC<NavLinkProps> = ({ label, path }) => (
   <li>
-    <a className="text-sm font-bold text-white hover:text-red-500" href={path}>
+    <a className="text-sm font-bold text-white hover:text-red-500" href={path} aria-label={label}>
       {label}
     </a>
   </li>
@@ -46,9 +47,9 @@ const MobileNavigation: FC<MobileNavigationProps> = ({ isVisible = false, onClos
     <nav className="relative flex flex-col py-6 pl-6 pr-5 h-full w-full bg-gray-500 border-r overflow-y-auto">
       <div className="flex items-center mb-8">
         <div className="flex justify-center w-full font-bold leading-none">
-          <Image className="h-auto" src={bigLogo} width={250} alt="" />
+          <Image className="h-auto" src={bigLogo} width={250} alt="Logo restaurant Goût d'ouest" />
         </div>
-        <button className="self-start navbar-close pt-3" onClick={onClose}>
+        <button name="fermer" className="self-start navbar-close pt-3" onClick={onClose}>
           <svg
             className="h-6 w-6 text-white cursor-pointer hover:text-gray-200"
             xmlns="http://www.w3.org/2000/svg"
@@ -79,12 +80,18 @@ const MobileNavigation: FC<MobileNavigationProps> = ({ isVisible = false, onClos
         </p>
         <div className="flex flex-row gap-2 justify-center">
           <div>
-            <a href={'https://www.facebook.com/goutdouest'}>
+            <a
+              href={'https://www.facebook.com/goutdouest'}
+              aria-label={"Facebook restaurant Goût d'ouest"}
+            >
               <Image src={facebookIcon} alt="Icône Facebook" />
             </a>
           </div>
           <div>
-            <a href={'https://www.instagram.com/valerieapeche/'}>
+            <a
+              href={'https://www.instagram.com/valerieapeche/'}
+              aria-label="Instagram restaurant Goût d'ouest"
+            >
               <Image src={instagramIcon} alt="Icône Instagram" />
             </a>
           </div>
@@ -111,7 +118,7 @@ export const Header: FC = () => {
     >
       <div className="absolute inset-0 bg-gray-900 opacity-30"></div>
       <nav className="relative px-6 py-6 flex justify-between items-center">
-        <a className="self-start" href="#">
+        <a className="self-start" href="#" aria-label="Logo restaurant Goût d'ouest">
           <Image
             className="h-12 max-sm:w-32 w-48"
             src={logo}
@@ -123,6 +130,7 @@ export const Header: FC = () => {
             className="navbar-burger flex items-center text-white hover:text-gray-100"
             spellCheck="false"
             onClick={toggleMobileMenu}
+            name="navigation mobile"
           >
             <svg
               className="block h-4 w-4 fill-current"
@@ -163,14 +171,14 @@ export const Header: FC = () => {
                     <a
                       className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 text-white font-semibold leading-loose transition duration-200 bg-red-400 hover:bg-red-500"
                       href="#formules"
-                      spellCheck="false"
+                      aria-label="Formules"
                     >
                       Formules
                     </a>
                     <a
                       className="inline-block mb-3 w-full lg:w-auto py-2 px-6 font-semibold bg-white hover:bg-gray-100 leading-loose transition duration-200"
                       href="#carte"
-                      spellCheck="false"
+                      aria-label="Carte"
                     >
                       Carte
                     </a>
